@@ -26,11 +26,11 @@
                       <button type="button" class="btn btn-sm btn-info"><%= link_to 'Edit', edit_project_path(project) %> </button>
                       <button type="button" class="btn btn-sm btn-info"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
                     </div>
-                    <% else %> 
+                  <% else %>
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-info"><%= link_to 'Show', project %></button>  
                     </div>
-                    <% end %>
+                  <%end%>
                   </div>
                 </div>
               </div>
