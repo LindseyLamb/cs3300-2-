@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+ 
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before(:each) do
@@ -43,7 +43,7 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content("Description can't be blank")
     end
   end
-
+  
   context "Remove existing project" do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
     scenario "remove project" do
