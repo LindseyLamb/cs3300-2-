@@ -1,6 +1,9 @@
-<h1>Editing Project</h1>
+<div class="col d-flex justify-content-center">
 
+<div class="card" style="width: 200rem; mx-3">
+  <div class="card-body" mx-auto>
+    <h2 class="card-title">Edit Project</h2>
 <%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<li class="btn btn-info"><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+<li class="btn btn-info"><%=  link_to 'Show', @project%></li>
+<li class="btn btn-info"><%=  link_to 'Back', projects_path%></li>

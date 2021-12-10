@@ -13,7 +13,7 @@
   
     <div class="container">
     <div class="row">
-    
+    <% if user_signed_in? %> 
     <% @projects.each do |project| %>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow-lg">
@@ -21,25 +21,42 @@
                 <div class="card-body">
                   <p> <%= project.description %></p>
                   <div class="d-flex justify-content-between align-items-center">
-                  
+                 
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-info"><%= link_to 'Show', project %></button>
                       <button type="button" class="btn btn-sm btn-info"><%= link_to 'Edit', edit_project_path(project) %> </button>
-                      <button type="button" class="btn btn-sm btn-info"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+                     
                     </div>
+                  
                   </div>
                 </div>
               </div>
+            
             </div>
-     
+            
      <% end %>
+     &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-sm btn-info"><%=link_to 'New Project', new_project_path %></button>
+     <% else %>
+     <% @projects.each do |project| %>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow-lg">
+        <h2>&nbsp;&nbsp;&nbsp;<%= project.title %></h2>
+          <div class="card-body">
+            <p> <%= project.description %></p>
+            <div class="d-flex justify-content-between align-items-center">
+     <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-info"><%= link_to 'Show', project %></button>
+        </div>
       </div>
       </div>
-              
+      </div>
+      </div>
+      <% end %>
+      <% end %>    
               
               
 
 
 <br>
 <p>
-&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-sm btn-info"><%=link_to 'New Project', new_project_path %></button>
+

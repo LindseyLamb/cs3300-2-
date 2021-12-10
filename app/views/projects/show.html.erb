@@ -5,8 +5,12 @@
   <div class="card-body">
     <h5 class="card-title"><%= @project.title %></h5>
     <p class="card-text"><%= @project.description %></p>
-    <li class="btn btn-primary"><%= link_to 'Edit', edit_project_path(@project)%></li>
-    <li class="btn btn-primary"><%=  link_to 'Back', projects_path%></li>
+    <% if user_signed_in? %>
+    <li class="btn btn-info"><%= link_to 'Edit', edit_project_path(@project)%></li>
+    <li class="btn btn-info"><%=  link_to 'Back', projects_path%></li>
+    <% else %>
+    <li class="btn btn-info"><%=  link_to 'Back', projects_path%></li>
+    <% end %>
   </div>
   <div class="card-footer text-muted">
   </div>
