@@ -1,22 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<div class="jumbotron">
-  <h1 class="display-4">Projects</h1>
-  <p class="lead">Hi, I'm Lindsey and this is my portfolio.</p>
+
+
+
+  <h1 class="display-4">Lindsey Lamb</h1>
+  <p class="lead"></p>
   <hr class="my-4">
   <p>In it you will find things that interest me and various projects that I have done.</p>
+  <img src="/root/cs330-2-/ok.jpg" class="rounded float-right" alt="...">
   <p class="lead">
-  </p>
-</div>
+  </p> 
 
 
-  
-    <div class="container">
+
+ 
+    <div class="container bg-secondary">
     <div class="row">
+   
     <% if user_signed_in? %> 
     <% @projects.each do |project| %>
             <div class="col-md-4">
-              <div class="card mb-4 box-shadow-lg">
+              <div class="card mb-4  box-shadow-lg">
               <h2>&nbsp;&nbsp;&nbsp;<%= project.title %></h2>
                 <div class="card-body">
                   <p> <%= project.description %></p>
@@ -51,10 +55,11 @@
       </div>
       </div>
       </div>
+      
       <% end %>
       <% end %>    
               
-              
+          
 
 
 <br>

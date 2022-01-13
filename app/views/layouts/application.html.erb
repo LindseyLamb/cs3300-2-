@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-  <a class="navbar-brand" href="#">Lindsey Lamb</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor05" aria-controls="navbarColor05" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <a class="navbar-brand" href="#">Lindsey Lamb</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor05" aria-controls="navbarColor05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
   <div class="collapse navbar-collapse" id="navbarColor05">
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
       <a class="nav-link" href="/projects">Home</a>      
-      </li>
+    </li>
      
      
-      <% if user_signed_in? %>
-        <li class='nav-link'><%= link_to current_user.email,  edit_user_registration_path %></li>
-        <li class='nav-link'><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <a class="nav-link" href="/users/sign_in">Sign In</a>  
-        <a class="nav-link" href="/views/sign_up">Sign Up</a>  
-      <% end %>
-    </ul>
+  <% if user_signed_in? %>
+     <li class='nav-link'><%= link_to current_user.email,  edit_user_registration_path %></li>
+     <li class='nav-link'><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+     <a class="nav-link" href="/users/sign_in">Sign In</a>  
+     <a class="nav-link" href="/views/sign_up">Sign Up</a>  
+  <% end %>
+ </ul>
     <form class="form-inline my-2 my-lg-0">
     </form>
   </div>
-</nav>
+ </nav>
 </head>
     <title>Lindsey Lamb</title>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
+    
     <body>
-    <%= yield %>
+    
+     <div class=" p-3 - bg-secondary text-white-50">
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield %>      
+  </div> 
+  </div>
+  </div>
+  </div>
+  <footer>
+  <p>Author: Lindsey Lamb<br>
+  <a href="mailto:lgslamb@gmail.com">lgslamb@gmail.com</a></p>
+  </footer>
+  </div>
+   
   </body>
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../../../dist/js/bootstrap.min.js"></script>
+    
+    
 </html>
 
 
